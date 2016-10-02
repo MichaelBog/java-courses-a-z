@@ -1,0 +1,7 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ru.mbogomolov</groupId>
+  <artifactId>java-courses-a-z</artifactId>
+  <version>2.0</version>
+  <packaging>jar</packaging> 
+</project>
