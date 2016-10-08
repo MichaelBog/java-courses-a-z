@@ -18,7 +18,8 @@ if (((a.distanceTo(b)) == 0) || ((b.distanceTo(c)) == 0) || ((c.distanceTo(a)) =
 	System.out.println("Невозможно построить треугольник");
 } else {
 double halfPerimeter = (((a.distanceTo(b))+(b.distanceTo(c))+(c.distanceTo(a))) / 2); 	
-return Math.sqrt(halfPerimeter*(halfPerimeter - a.distanceTo(b))*(halfPerimeter - b.distanceTo(c))*(halfPerimeter - c.distanceTo(a)));
+double result = Math.sqrt(halfPerimeter*(halfPerimeter - a.distanceTo(b))*(halfPerimeter - b.distanceTo(c))*(halfPerimeter - c.distanceTo(a)));
 }
+return result;
 }
 }
