@@ -14,12 +14,13 @@ this.c = c;
 
 public double area() {
 //calculate the triangle area
+double triangleArea = 0.0;
+double halfPerimeter = ((a.distanceTo(b))+(b.distanceTo(c))+(c.distanceTo(a))) / 2.0;	
 if (((a.distanceTo(b)) == 0) || ((b.distanceTo(c)) == 0) || ((c.distanceTo(a)) == 0)){
 	System.out.println("Невозможно построить треугольник");
 } else {
-double halfPerimeter = (((a.distanceTo(b))+(b.distanceTo(c))+(c.distanceTo(a))) / 2); 	
-double result = Math.sqrt(halfPerimeter*(halfPerimeter - a.distanceTo(b))*(halfPerimeter - b.distanceTo(c))*(halfPerimeter - c.distanceTo(a)));
+    triangleArea = Math.sqrt(halfPerimeter*(halfPerimeter - a.distanceTo(b))*(halfPerimeter - b.distanceTo(c))*(halfPerimeter - c.distanceTo(a)));
 }
-return result;
+return triangleArea;
 }
 }
