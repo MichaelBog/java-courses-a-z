@@ -11,6 +11,6 @@ this.y = y;
 
 public double distanceTo(Point point) {
 //calculate distance between two points
-return Math.sqrt(Math.pow(point.y - this.y, 2) + Math.pow(point.x - this.x, 2.0));
+return Math.sqrt(Math.pow(point.y - this.y, 2.0) + Math.pow(point.x - this.x, 2.0));
 }
 }

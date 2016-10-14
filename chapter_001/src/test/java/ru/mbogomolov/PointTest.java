@@ -8,9 +8,9 @@ public class PointTest{
 	@Test
 	public void whenSetPointThenReciveDistanceFromAtoB() {
 		Point a = new Point(1,1);
-		Point b = new Point(2,2);
+		Point b = new Point(3,3);
 		final double distance = a.distanceTo(b);
-		assertThat(distance, is(2));
+		assertThat(distance, is(2.828));
 	}
 
 }
