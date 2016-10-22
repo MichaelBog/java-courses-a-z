@@ -2,7 +2,7 @@ package ru.mbogomolov;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
-import org.hamcrest.number.IsCloseTo.closeTo;
+import static org.hamcrest.number.IsCloseTo.closeTo;
 import org.junit.Test;
 
 
