@@ -16,12 +16,7 @@
                 <version>1.3</version> 
                 <scope>test</scope>
        </dependency>   
-       <dependency>             
-               <groupId>org.hamcrest.number</groupId>  
-                <artifactId>hamcrest-number</artifactId> 
-                <version>1.3</version> 
-                <scope>test</scope>
-       </dependency>   
+       
         <dependency>
          <groupId>junit</groupId>  
                 <artifactId>junit</artifactId> 
