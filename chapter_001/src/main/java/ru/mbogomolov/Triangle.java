@@ -1,5 +1,6 @@
 package ru.mbogomolov;
 import ru.mbogomolov.Point;
+import ru.mbogomolov.MaxSide;
 
 public class Triangle {
 public Point a;
