@@ -3,22 +3,17 @@ import ru.mbogomolov.Point;
 import ru.mbogomolov.Triangle;
 
 public class MaxSide {
-    Point a = new Point(1,1);
-    Point b = new Point(3,3);
-    Point c = new Point(1,3);
     
-    
-Triangle triangle = new Triangle(a,b,c);
-
 
 public double max(Triangle triangle){ 
-        double maxSide = 0;
-		  if((a.distanceTo(b)) > (b.distanceTo(c)) || (a.distanceTo(b)) > (c.distanceTo(a))){
-			maxSide = a.distanceTo(b);
-			}else if((b.distanceTo(c) > a.distanceTo(b)) || (b.distanceTo(c) > c.distanceTo(a))){
-            maxSide = b.distanceTo(c);
+    
+    double maxSide = 0;
+		  if((triangle.a.distanceTo(triangle.b)) > (triangle.b.distanceTo(triangle.c)) || (triangle.a.distanceTo(triangle.b)) > (triangle.c.distanceTo(triangle.a))){
+			maxSide = triangle.a.distanceTo(triangle.b);
+			}else if((triangle.b.distanceTo(triangle.c) > triangle.a.distanceTo(triangle.b)) || (triangle.b.distanceTo(triangle.c) > triangle.c.distanceTo(triangle.a))){
+            maxSide = triangle.b.distanceTo(triangle.c);
 			}else
-            {maxSide = c.distanceTo(a);
+            {maxSide = triangle.c.distanceTo(triangle.a);
 		      }       
     return maxSide;
                      }
