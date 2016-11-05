@@ -10,14 +10,19 @@
      <maven.compiler.target>1.8</maven.compiler.target>  
      </properties>  
      <dependencies>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-io</artifactId>  
+        <version>2.5</version>
+        <scope>test</scope>
+      </dependency>
         <dependency>             
                <groupId>org.hamcrest</groupId>  
                 <artifactId>hamcrest-all</artifactId> 
                 <version>1.3</version> 
                 <scope>test</scope>
        </dependency>   
-       
-        <dependency>
+       <dependency>
          <groupId>junit</groupId>  
                 <artifactId>junit</artifactId> 
                 <version>4.12</version> 
@@ -27,7 +32,7 @@
      <build>
        <plugins> 
        <plugin>
-          <groupId>org.apeche.maven.plugins</groupId>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>  
             <version>3.3</version>
             <configuration>
