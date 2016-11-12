@@ -7,8 +7,8 @@ import org.junit.Test;
 public class BubbleSortTest {
 	@Test
     public void whenRecieveArrayThenSort() {
-    	int[] array = new int[] {1,2,7,8};
-    	int[] result = BubbleSort.bubbleSort(array);
+    	BubbleSort bubbleArray = new BubbleSort(new int[] {1,2,7,8});
+    	int[] result = bubbleArray.bubbleSort();
     	assertThat(result, is(new int[] {8,7,2,1}));
     }  
 }   
