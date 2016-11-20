@@ -1,7 +1,6 @@
 package ru.mbogomolov;
 
 public class RotateArray{
-	int index;
 	public int[][] values;
 
 public RotateArray(int[][] values){
@@ -9,15 +8,15 @@ public RotateArray(int[][] values){
 }
     
 public int[][] rotateArrayClockWise(){
-     
-     int helpIndex = index - 1;
-     int[][] rotateArray = new int[index][index];
-     for (int i = 0; i < index; i++) {
-     	for (int j = 0; j < index; j++) {
-     		rotateArray[j][helpIndex] = this.values[i][j];
-     	}
-     	helpIndex--;
-     }
-return rotateArray;
-}
+        for (int i = 0; i < this.values.length/2; i++) {
+     	for (int j = i; j < this.values.length-1-i; j++) {
+     		int tmp = this.values[i][j];
+            this.values[i][j] = this.values[this.values.length-1-j][i];
+            this.values[this.values.length-1-j][i] = this.values[this.values.length-1-i][this.values.length-1-j];
+            this.values[this.values.length-1-i][this.values.length-1-j] = this.values[j][this.values.length-1-i];
+            this.values[j][this.values.length-1-i] = tmp;
+     	  }
+         }
+return this.values;
+    }
 }
