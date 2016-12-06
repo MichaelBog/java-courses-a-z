@@ -5,10 +5,10 @@ import java.lang.*;
 import java.io.*;
 
 
-public class RemoveStringDuplicate{
+public class RemoveStringDuplicate {
 	public String[] array;
 
-public RemoveStringDuplicate(String[] array){
+public RemoveStringDuplicate(String[] array) {
 	this.array = array;
 }
 	
