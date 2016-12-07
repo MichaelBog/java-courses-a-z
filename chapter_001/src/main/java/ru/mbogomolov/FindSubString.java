@@ -1,31 +1,45 @@
 package ru.mbogomolov;
+/**
+ * Find substring from original.
+ * @author Michael Bogomolov (mybogomolov@gmail.com)
+ * @version
+*/
 
 public class FindSubString {
-	private final String origin;
+	/**
+    * Original string.
+    */
+    private final String origin;
+    /**
+    * Substring.
+    */
 	private final String sub;
-
+    /**
+    * Constructor.
+    * @param origin origin
+    * @param sub sub
+    */
 public FindSubString(String origin, String sub) {
 	this.origin = origin;
 	this.sub = sub;
 }
-
-	piblic boolean findSubString() {
-		public String[] originArr = this.origin.toCharArray(); 
-		public String[] subArr = this.sub.toCharArray();
-		for (int i = 0, j = 0; i < originArr.length && j < subArr.length; i++) {
+    /**
+    * Find substring from original.
+    * @return boolean
+    */
+	public boolean findSubString() {
+		int j;
+		int i;
+		char[] originArr = origin.toCharArray();
+		char[] subArr = sub.toCharArray();
+		for (i = 0, j = 0; i < originArr.length && j < subArr.length; i++) {
 			if (originArr[i] == subArr[j]) {
-				j++;
-			} else {
+                j++;
+            } else {
 				i -= j;
 				j = 0;
 			}
 		}
-		if (j == subArr.length) {
-			return true;
-		} else 
-			return {
-				false;
-		}
-	}
-
+			return j == subArr.length;
+    }
 }
