@@ -30,8 +30,8 @@ public FindSubString(String origin, String sub) {
 	public boolean findSubString() {
 		int j;
 		int i;
-		char[] originArr = origin.toCharArray();
-		char[] subArr = sub.toCharArray();
+		char[] originArr = this.origin.toCharArray();
+		char[] subArr = this.sub.toCharArray();
 		for (i = 0, j = 0; i < originArr.length && j < subArr.length; i++) {
 			if (originArr[i] == subArr[j]) {
                 j++;
