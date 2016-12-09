@@ -32,7 +32,7 @@ public FindSubString(String origin, String sub) {
 		int i = 0;
 		char[] originArr = this.origin.toCharArray();
 		char[] subArr = this.sub.toCharArray();
-		while(i < originArr.length && j < subArr.length) {
+		while (i < originArr.length && j < subArr.length) {
 		if (originArr[i] == subArr[j]) {
                 j++;
                 i++;

@@ -8,22 +8,22 @@ public class MergeTwoSortArrays {
 	/**
 	* Firts sorted array.
 	*/
-	public int[] firstArray;
+	private final int[] firstArray;
 	/**
 	* Second sorted array.
 	*/
-	public int[] secondArray;
+	private final int[] secondArray;
 	/**
 	* Constructor.
 	* @param firstArray firstArray
 	* @param secondArray secondArray
 	*/
-public MergeTwoSortArrays(int[] firstArray, int[] secondArray){
+public MergeTwoSortArrays(int[] firstArray, int[] secondArray) {
 	this.firstArray = firstArray;
 	this.secondArray = secondArray;
 }
 	/**
-	* Merge two previosly sorted arrays
+	* Merge two previosly sorted arrays.
 	* @return combined sorted array
 	*/
 public int[] arraysMerge() {
@@ -34,7 +34,7 @@ public int[] arraysMerge() {
 	while (firstArrayIndex < this.firstArray.length && secondArrayIndex < this.secondArray.length) {
 		if (this.firstArray[firstArrayIndex] < this.secondArray[secondArrayIndex]) {
 		mergeArray[mergeArrayIndex]	= this.firstArray[firstArrayIndex];
-		firstArrayIndex++;		
+			firstArrayIndex++;
 		} else {
 			mergeArray[mergeArrayIndex] = this.secondArray[secondArrayIndex];
 			secondArrayIndex++;
