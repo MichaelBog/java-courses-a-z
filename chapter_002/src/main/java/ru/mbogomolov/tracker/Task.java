@@ -6,20 +6,57 @@ package ru.mbogomolov.tracker;
  */
 
 public class Task {
+    /**
+     * Tasks id.
+     */
     private String id;
+
+    /**
+     * Tasks name.
+     */
     private String name;
+
+    /**
+     * Tasks description.
+     */
     private String description;
+
+    /**
+     * Tasks creation time.
+     */
     private long create;
+
+    /**
+     * Tasks comment.
+     */
     private String comment;
 
+    /**
+     * Constructor for Task without args.
+     */
     public Task() {
     }
 
+    /**
+     * Constructor for Task.
+     * @param name
+     * @param description
+     * @param create
+     */
     public Task(String name, String description, long create) {
         this.name = name;
         this.description = description;
         this.create = create;
     }
+
+    /**
+     * Constructor for Task.
+     * @param name
+     * @param description
+     * @param create
+     * @param comment
+     */
+
     public Task(String name, String description, long create, String comment) {
         this.name = name;
         this.description = description;
@@ -27,6 +64,10 @@ public class Task {
         this.comment = comment;
     }
 
+    /**
+     * Getters and setters for all class fields.
+     * @return fields
+     */
     public String getName() {
         return this.name;
     }
