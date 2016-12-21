@@ -28,21 +28,31 @@ public class Tracker {
      */
     public void removeTask(Task task) {
         if (task != null) {
-            task = null;
+            for (Task result : this.tasks) {
+                if (result.equals(task)) {
+                    result = null;
+                }
+            }
         }
     }
 
     /**
      * method edit task name, description, creation time, comment.
      * @param task
-     * @return task
+     * @return Task[]
      */
-    public Task editTask(Task task) {
-        task.setName(task.getName());
-        task.setDescription(task.getDescription());
-        task.setCreate(task.getCreate());
-        task.setComment(task.getComment());
-        return task;
+    public Task[] editTask(Task task) {
+        Task result = new Task();
+        result.setName(task.getName());
+        result.setDescription(task.getDescription());
+        result.setCreate(task.getCreate());
+        result.setComment(task.getComment());
+        for (Task editTask : this.tasks) {
+            if (editTask.equals(task)) {
+                editTask = result;
+            }
+        }
+        return this.tasks;
     }
 
     /**
