@@ -7,13 +7,30 @@ import java.util.Random;
  * @author Michael Bogomolov (mybogomolov@gmail.com)
  */
 public class Tracker {
-    private Task[] tasks = new Task[100];
+
+    /**
+     * possible number of Tasks in array.
+     */
+    private final int numberForTask = 100;
+
+    /**
+     * array for Task storage.
+     */
+    private Task[] tasks = new Task[numberForTask];
+
+    /**
+     * position for Task in array for correct adding.
+     */
     private int position = 0;
+
+    /**
+     * create the random for correct generateId method.
+     */
     private static final Random RN = new Random();
 
     /**
      * method add new task.
-     * @param task
+     * @param task - task
      * @return task
      */
     public Task addTask(Task task) {
@@ -24,50 +41,44 @@ public class Tracker {
 
     /**
      * method remove task.
-     * @param task
+     * @param task - task
      */
     public void removeTask(Task task) {
         if (task != null) {
-            for (Task result : this.tasks) {
-                if (result.equals(task)) {
-                    result = null;
+            for (int i = 0; i < this.tasks.length; i++) {
+                if (this.tasks[i].equals(task)) {
+                    this.tasks[i] = null;
+                    break;
                 }
             }
         }
     }
 
     /**
-     * method edit task name, description, creation time, comment.
-     * @param task
-     * @return Task[]
+     * method update task.
+     * @param task - task
      */
-    public Task[] editTask(Task task) {
-        Task result = new Task();
-        result.setName(task.getName());
-        result.setDescription(task.getDescription());
-        result.setCreate(task.getCreate());
-        result.setComment(task.getComment());
-        for (Task editTask : this.tasks) {
-            if (editTask.equals(task)) {
-                editTask = result;
+    public void updateTask(Task task) {
+        for (int i = 0; i < this.tasks.length; i++) {
+            if (this.tasks[i].getId().equals(task.getId())) {
+                this.tasks[i] = task;
+                break;
             }
         }
-        return this.tasks;
     }
 
     /**
      * add comment for task.
-     * @param task
-     * @return task
+     * @param id - id
+     * @param comment - comment
      */
-    public Task addComment(Task task) {
-        if (task.getComment().equals(null)) {
-            task.setComment(task.getComment());
+    public void addComment(String id, String comment) {
+        for (int i = 0; i < this.tasks.length; i++) {
+            if (this.tasks[i].getId().equals(id)) {
+                this.tasks[i].setComment(comment);
+                break;
+            }
         }
-        if (!task.getComment().equals(null)) {
-            editTask(task);
-        }
-        return task;
     }
 
     /**
@@ -92,14 +103,14 @@ public class Tracker {
 
     /**
      * find task by id.
-     * @param id
+     * @param id - id
      * @return task(result)
      */
     public Task getById(String id) {
         Task result = null;
-        for (Task task : tasks) {
-            if (task != null && task.getId().equals(id)) {
-                result = task;
+        for (int i = 0; i < this.tasks.length; i++) {
+            if (this.tasks[i] != null && this.tasks[i].getId().equals(id)) {
+                result = this.tasks[i];
                 break;
             }
         }
@@ -108,14 +119,14 @@ public class Tracker {
 
     /**
      * find task by name.
-     * @param name
+     * @param name - name
      * @return task(result)
      */
     public Task getByName(String name) {
         Task result = null;
-        for (Task task : tasks) {
-            if (task != null && task.getName().equals(name)) {
-                result = task;
+        for (int i = 0; i < this.tasks.length; i++) {
+            if (this.tasks[i] != null && this.tasks[i].getName().equals(name)) {
+                result = this.tasks[i];
                 break;
             }
         }
