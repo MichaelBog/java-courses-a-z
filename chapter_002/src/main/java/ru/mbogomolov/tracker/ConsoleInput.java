@@ -22,7 +22,4 @@ public class ConsoleInput implements Input {
         System.out.println(question);
         return scanner.nextLine();
     }
-    public int userAction() {
-        return Integer.parseInt(scanner.nextLine());
-    }
 }
