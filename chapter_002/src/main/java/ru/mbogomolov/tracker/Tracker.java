@@ -48,7 +48,22 @@ public class Tracker {
             for (int i = 0; i < this.tasks.length; i++) {
                 if (this.tasks[i].equals(task)) {
                     this.tasks[i] = null;
+                    sortTask();
                     break;
+                }
+            }
+        }
+    }
+
+    /**
+     * method sort tasks array, put removed Task(null) to the end.
+     */
+    public void sortTask() {
+        for (int barrier = this.tasks.length - 1; barrier >= 0; barrier--) {
+            for (int index = 0; index < barrier; index++) {
+                if (this.tasks[index] == null && this.tasks[index + 1] != null) {
+                    this.tasks[index] = this.tasks[index + 1];
+                    this.tasks[index + 1] = null;
                 }
             }
         }

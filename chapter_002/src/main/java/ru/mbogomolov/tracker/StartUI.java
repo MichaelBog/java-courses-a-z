@@ -52,8 +52,12 @@ public class StartUI {
                 String comment = input.ask("Enter comment");
                 tracker.addComment(id, comment);
             } else if (welcome.equals("5")) {
-                for (Task task : tracker.getAll()) {
-                    System.out.println(task.getName());
+                try {
+                    for (Task task : tracker.getAll()) {
+                        System.out.println(task.getName());
+                    }
+                } catch (NullPointerException exception) {
+                    System.out.println("Another tasks were deleted");
                 }
             } else if (welcome.equals("6")) {
                 String id = input.ask("Enter id for search");
